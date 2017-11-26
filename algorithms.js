@@ -1,30 +1,28 @@
-function findLongestWord(str) {
-  var splitArray = str.split(' ');
-  var longestWord = 0;
-  
-  for (var i=0; i<splitArray.length; i++){
-    if(splitArray[i].length > longestWord){
-      longestWord=splitArray[i].length;
-    }
-  }
-  return longestWord;
+function titleCase(str) {
+   var splitTheStr = str.toLowerCase().split(' '); //split string into array and make lowercase
+   for (var i = 0; i < splitTheStr.length; i++) {
+       
+       splitTheStr[i] = splitTheStr[i].charAt(0).toUpperCase() + splitTheStr[i].substring(1); 
+       //take the Ith word and make the 1st character uppercase (the remaining string is already lowercase from above)
+   }
+   
+   return splitTheStr.join(' '); //join all words together
 }
 
-findLongestWord("The quick brown fox jumped over the lazy dog");
+titleCase("I'm a little tea pot");
 
 
 
-function testLongString(str){
-  var splitArray = str.split('');
+
+function testCapitals(str){
   
-  var holdLongestWord = 0;
-  for (var i=0; i<splitArray.length; i++){
-    if(splitArray[i].length > holdLongestWord){
-      holdLongestWord = splitArray[i].length;
-    }
+  var splitTheString = str.toLowerCase().split(' ');
+  
+  for (var i=0; i<splitTheString.length; i++){
+    splitTheString[i]=splitTheString[i].charAt(0).toUpperCase() + splitTheString[i].substring(1);
+    console.log(splitTheString[i]);
   }
-  return holdLongestWord;
+  return splitTheString.join(' ');
 }
-testLongString("I am going to be a great application developer");
-
+console.log(testCapitals("hiya HOMIE peeps"));
 
