@@ -1,33 +1,30 @@
-function palindrome(str) {
-  // Good luck!
-  var removeChars = /[^a-zA-Z0-9]/g; // to remove all non-alphanumeric characters
-  var makeLowercase = str.toLowerCase().replace(removeChars, ""); //holds value of the lowercase string with any removed characters replaced by blanks
-  var newString = makeLowercase.split("").reverse().join(""); //splits the original lowercase string, reverses and joins back together
-  if (makeLowercase === newString){ //checks if both strings are the exact same
-    return true;
-  } else {
-    return false;
+function findLongestWord(str) {
+  var splitArray = str.split(' ');
+  var longestWord = 0;
+  
+  for (var i=0; i<splitArray.length; i++){
+    if(splitArray[i].length > longestWord){
+      longestWord=splitArray[i].length;
+    }
   }
+  return longestWord;
 }
-palindrome("eye");
+
+findLongestWord("The quick brown fox jumped over the lazy dog");
 
 
 
-
-
-
-var string="Candice";
-var newString=string.replace("Candice","Bianca");
-
-console.log(string);
-console.log(newString);
-
-var name="Candice Bianca Brown";
-console.log(name);
-console.log(name.toLowerCase());
-console.log(name.split(""));
-console.log(name.split('').reverse());
-console.log(name.split('').reverse().join(''));
-console.log(name.split());
+function testLongString(str){
+  var splitArray = str.split('');
+  
+  var holdLongestWord = 0;
+  for (var i=0; i<splitArray.length; i++){
+    if(splitArray[i].length > holdLongestWord){
+      holdLongestWord = splitArray[i].length;
+    }
+  }
+  return holdLongestWord;
+}
+testLongString("I am going to be a great application developer");
 
 
