@@ -1,16 +1,33 @@
-function factorialize(num) {
-  if(num===0 || num===1){
-    return 1;
-  } else if(num > 1) {
-    
-    return (num * factorialize(num - 1));
+function palindrome(str) {
+  // Good luck!
+  var removeChars = /[^a-zA-Z0-9]/g; // to remove all non-alphanumeric characters
+  var makeLowercase = str.toLowerCase().replace(removeChars, ""); //holds value of the lowercase string with any removed characters replaced by blanks
+  var newString = makeLowercase.split("").reverse().join(""); //splits the original lowercase string, reverses and joins back together
+  if (makeLowercase === newString){ //checks if both strings are the exact same
+    return true;
+  } else {
+    return false;
   }
-  
 }
+palindrome("eye");
 
-factorialize(5);
 
-// Factorialize a Number 
-// Return the factorial of the provided integer.
-// If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
-// Factorials are often represented with the shorthand notation n!
+
+
+
+
+var string="Candice";
+var newString=string.replace("Candice","Bianca");
+
+console.log(string);
+console.log(newString);
+
+var name="Candice Bianca Brown";
+console.log(name);
+console.log(name.toLowerCase());
+console.log(name.split(""));
+console.log(name.split('').reverse());
+console.log(name.split('').reverse().join(''));
+console.log(name.split());
+
+
